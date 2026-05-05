@@ -1,88 +1,113 @@
-import { motion } from "framer-motion";
-import { ArrowUpRight, Github } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Github, ExternalLink } from "lucide-react";
+import { SectionHeading } from "./About";
 
-const projects = [
+type Category = "All" | "Frontend" | "Fullstack" | "AI" | "Web App";
+
+const projects: { title: string; desc: string; tags: string[]; categories: Category[] }[] = [
   {
-    title: "Nebula Analytics",
-    desc: "Real-time data visualization dashboard with custom chart engine and live websocket streams.",
-    tags: ["Next.js", "D3.js", "WebSockets"],
-    accent: "from-primary/30 to-transparent",
+    title: "NeuroDub AI",
+    desc: "Auto-translate and dub videos using ElevenLabs, Express, and Cloudinary.",
+    tags: ["React", "Express", "Node", "Mutler", "Cloudinary", "ElevenLabs API", "Axios"],
+    categories: ["AI", "Fullstack"],
   },
   {
-    title: "Pulse Commerce",
-    desc: "Headless e-commerce storefront with Stripe checkout, animated product galleries and CMS.",
-    tags: ["React", "Stripe", "Sanity"],
-    accent: "from-purple-500/30 to-transparent",
+    title: "WeatherSit3",
+    desc: "Live weather dashboard with forecasts, charts, and dynamic UI.",
+    tags: ["MERN", "WeatherAPI", "Axios", "Tailwind CSS"],
+    categories: ["Fullstack", "Web App"],
   },
   {
-    title: "Drift Notes",
-    desc: "Minimal markdown note app with end-to-end encryption and offline-first sync.",
-    tags: ["TypeScript", "IndexedDB", "PWA"],
-    accent: "from-amber-500/30 to-transparent",
+    title: "The Talk App",
+    desc: "A real-time chat app with typing indicators, sockets, and elegant UI.",
+    tags: ["React", "Node.js", "Socket.IO", "MongoDB", "Tailwind CSS", "Express.js"],
+    categories: ["Fullstack", "Web App"],
   },
   {
-    title: "Atlas AI",
-    desc: "AI chat interface with streaming responses, context memory and tool calling.",
-    tags: ["OpenAI", "Edge Functions"],
-    accent: "from-rose-500/30 to-transparent",
+    title: "3D Portfolio",
+    desc: "An immersive 3D portfolio site built with Three.js and React Three Fiber.",
+    tags: ["React", "Three.js", "GSAP", "Tailwind CSS"],
+    categories: ["Frontend"],
+  },
+  {
+    title: "Glow UI Kit",
+    desc: "A collection of glassmorphism components with neon accents.",
+    tags: ["React", "Tailwind", "Framer Motion"],
+    categories: ["Frontend"],
+  },
+  {
+    title: "TaskFlow",
+    desc: "Kanban-style productivity app with drag & drop and reminders.",
+    tags: ["React", "Node", "MongoDB"],
+    categories: ["Fullstack", "Web App"],
   },
 ];
 
-export const Projects = () => {
-  return (
-    <section id="projects" className="py-32">
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-14 flex items-end justify-between flex-wrap gap-4"
-        >
-          <div>
-            <p className="font-mono text-sm text-primary mb-3">// selected work</p>
-            <h2 className="text-4xl md:text-5xl font-bold">Featured Projects</h2>
-          </div>
-          <a href="#" className="text-sm text-primary hover:underline">View all →</a>
-        </motion.div>
+const filters: Category[] = ["All", "Frontend", "Fullstack", "AI", "Web App"];
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((p, i) => (
-            <motion.article
-              key={p.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.55, delay: i * 0.08 }}
-              className="group relative rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/50 transition-all"
+export const Projects = () => {
+  const [active, setActive] = useState<Category>("All");
+  const visible = active === "All" ? projects : projects.filter((p) => p.categories.includes(active));
+
+  return (
+    <section id="projects" className="relative py-24 overflow-hidden">
+      <div className="absolute top-1/3 left-0 h-72 w-1/2 bg-brand-pink/5 blur-3xl pointer-events-none" />
+      <div className="container relative z-10">
+        <SectionHeading>Projects</SectionHeading>
+
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {filters.map((f) => (
+            <button
+              key={f}
+              onClick={() => setActive(f)}
+              className={`rounded-full px-5 py-1.5 text-sm font-medium border transition-all ${
+                active === f
+                  ? "bg-gradient-button text-primary-foreground border-transparent shadow-cyan"
+                  : "bg-card text-foreground border-brand-cyan/40 hover:border-brand-cyan"
+              }`}
             >
-              <div className={`h-48 bg-gradient-to-br ${p.accent} relative`}>
-                <div className="absolute inset-0 grid-bg opacity-50" />
-                <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <a href="#" className="h-9 w-9 rounded-full bg-background/80 backdrop-blur flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all">
-                    <Github className="h-4 w-4" />
-                  </a>
-                  <a href="#" className="h-9 w-9 rounded-full bg-background/80 backdrop-blur flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all">
-                    <ArrowUpRight className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                  {p.title}
-                </h3>
+              {f}
+            </button>
+          ))}
+        </div>
+
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <AnimatePresence>
+            {visible.map((p) => (
+              <motion.article
+                key={p.title}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                className="rounded-xl bg-card border border-brand-cyan/30 p-6 hover:border-brand-cyan hover:shadow-cyan transition-all"
+              >
+                <h3 className="text-2xl font-bold text-gradient-heading mb-2">{p.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">{p.desc}</p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-5">
                   {p.tags.map((t) => (
-                    <span key={t} className="rounded-full border border-border bg-background px-3 py-1 text-xs font-mono text-muted-foreground">
+                    <span
+                      key={t}
+                      className="rounded-full border border-brand-cyan/40 text-brand-cyan px-3 py-0.5 text-xs"
+                    >
                       {t}
                     </span>
                   ))}
                 </div>
-              </div>
-            </motion.article>
-          ))}
-        </div>
+                <div className="flex items-center gap-3">
+                  <a href="#" className="text-brand-cyan hover:text-brand-pink transition-colors">
+                    <Github className="h-5 w-5" />
+                  </a>
+                  <a href="#" className="text-brand-cyan hover:text-brand-pink transition-colors">
+                    <ExternalLink className="h-5 w-5" />
+                  </a>
+                </div>
+              </motion.article>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );

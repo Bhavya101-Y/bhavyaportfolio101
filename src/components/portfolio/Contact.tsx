@@ -1,50 +1,98 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Send, Github, Linkedin, Mail, Twitter, Heart } from "lucide-react";
+import { SectionHeading } from "./About";
+import { useToast } from "@/hooks/use-toast";
 
 export const Contact = () => {
+  const { toast } = useToast();
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({ title: "Message sent!", description: "Thanks for reaching out — I'll get back to you soon." });
+    setForm({ name: "", email: "", message: "" });
+  };
+
   return (
-    <section id="contact" className="py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
-      <div className="container relative z-10 text-center max-w-2xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
+    <section id="contact" className="relative py-24 overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-64 w-[80%] bg-brand-pink/10 blur-3xl pointer-events-none" />
+      <div className="container relative z-10">
+        <SectionHeading>Contact</SectionHeading>
+
+        <motion.form
+          onSubmit={onSubmit}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
+          className="relative max-w-2xl mx-auto rounded-2xl border border-brand-cyan/40 bg-card/50 backdrop-blur p-8 md:p-10 space-y-6 shadow-cyan"
         >
-          <p className="font-mono text-sm text-primary mb-3">// say hello</p>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Let's build something <span className="text-primary text-glow">together</span>
-          </h2>
-          <p className="text-muted-foreground text-lg mb-10">
-            I'm always open to discussing new projects, creative ideas, or
-            opportunities to be part of your vision.
-          </p>
-          <a
-            href="mailto:hello@akshat.dev"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-medium text-primary-foreground shadow-soft-glow hover:shadow-glow transition-all"
-          >
-            <Mail className="h-4 w-4" />
-            hello@akshat.dev
-          </a>
-
-          <div className="flex items-center justify-center gap-5 mt-10">
-            {[Github, Linkedin, Twitter].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary/50 transition-all"
-              >
-                <Icon className="h-4 w-4" />
-              </a>
-            ))}
+          <div className="relative">
+            <label className="absolute -top-2 left-4 px-2 bg-card text-xs text-brand-cyan">
+              May I know your good name
+            </label>
+            <input
+              required
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+              className="w-full rounded-lg border border-brand-cyan/40 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-brand-cyan"
+            />
           </div>
-        </motion.div>
+
+          <div className="relative">
+            <label className="absolute -top-2 left-4 px-2 bg-card text-xs text-brand-cyan">
+              Where should I contact you back (Your Mail ID)
+            </label>
+            <input
+              required
+              type="email"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              className="w-full rounded-lg border border-brand-cyan/40 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-brand-cyan"
+            />
+          </div>
+
+          <div className="relative">
+            <label className="absolute -top-2 left-4 px-2 bg-card text-xs text-brand-cyan">
+              Your message goes here
+            </label>
+            <textarea
+              required
+              rows={5}
+              value={form.message}
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
+              className="w-full rounded-lg border border-brand-cyan/40 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-brand-cyan resize-none"
+            />
+          </div>
+
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-button px-8 py-3 text-sm font-semibold text-primary-foreground shadow-pink hover:scale-105 transition-transform"
+            >
+              Send Message <Send className="h-4 w-4" />
+            </button>
+          </div>
+        </motion.form>
       </div>
 
-      <footer className="container mt-24 pt-8 border-t border-border flex flex-wrap items-center justify-between gap-4 text-sm text-muted-foreground">
-        <p>© 2026 Akshat. Crafted with care.</p>
-        <p className="font-mono">designed & built by AK</p>
+      <footer className="container mt-24 pt-8 border-t border-border text-center">
+        <p className="text-muted-foreground mb-5">
+          Designed & Built with <Heart className="inline h-4 w-4 text-red-500 fill-red-500" /> by{" "}
+          <span className="text-brand-cyan font-semibold">Akshat Kala</span>
+        </p>
+        <div className="flex items-center justify-center gap-5">
+          {[Github, Linkedin, Mail, Twitter].map((Icon, i) => (
+            <a
+              key={i}
+              href="#"
+              className="text-muted-foreground hover:text-brand-cyan transition-colors"
+            >
+              <Icon className="h-5 w-5" />
+            </a>
+          ))}
+        </div>
       </footer>
     </section>
   );

@@ -1,57 +1,91 @@
 import { motion } from "framer-motion";
-import { Code2, Rocket, Sparkles } from "lucide-react";
 
-const stats = [
-  { Icon: Code2, label: "Projects Built", value: "30+" },
-  { Icon: Rocket, label: "Years Experience", value: "3+" },
-  { Icon: Sparkles, label: "Happy Clients", value: "15+" },
+const info = [
+  { label: "Name", value: "Akshat Kala" },
+  { label: "DOB", value: "November 05, 2005" },
+  { label: "Address", value: "Himalayan Colony, Najibabad" },
+  { label: "Zip Code", value: "246763" },
+  { label: "Email", value: "itzakshat706@gmail.com" },
+  { label: "Phone", value: "+91 8923 700017" },
+  { label: "Projects", value: "5+ Projects Worked On" },
 ];
+
+export const SectionHeading = ({ children }: { children: React.ReactNode }) => (
+  <motion.h2
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+    className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-gradient-heading"
+  >
+    {children}
+  </motion.h2>
+);
 
 export const About = () => {
   return (
-    <section id="about" className="py-32 relative">
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
+    <section id="about" className="relative py-24 overflow-hidden">
+      <div className="absolute -top-20 left-1/2 -translate-x-1/2 h-64 w-[80%] bg-brand-pink/5 blur-3xl pointer-events-none" />
+      <div className="container relative z-10">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl"
+          className="text-4xl md:text-5xl font-extrabold text-gradient-heading mb-10"
         >
-          <p className="font-mono text-sm text-primary mb-3">// about me</p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Building digital products with{" "}
-            <span className="text-primary">purpose & precision</span>
-          </h2>
-          <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
-            <p>
-              I'm a passionate developer who loves building things that live on
-              the internet. My interest in web development started back in 2021
-              when I built my first landing page — turns out hacking together a
-              custom theme taught me a lot about HTML & CSS.
-            </p>
-            <p>
-              Today, I focus on crafting accessible, performant, human-centered
-              products at the intersection of design and engineering.
-            </p>
-          </div>
-        </motion.div>
+          About Me
+        </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-          {stats.map(({ Icon, label, value }, i) => (
-            <motion.div
-              key={label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="rounded-2xl border border-border bg-card/50 p-6 hover:border-primary/40 transition-all"
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative aspect-[3/4] max-w-sm rounded-2xl border-gradient-brand shadow-pink overflow-hidden bg-card"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-pink/30 via-brand-purple/20 to-brand-cyan/30 flex items-center justify-center">
+              <span className="text-7xl font-extrabold text-gradient-brand">AK</span>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              A web developer with a passion for clean design and functional code,
+              I specialize in building responsive, user-focused websites that make
+              a lasting impact. With a strong foundation in front-end and back-end
+              technologies, I aim to deliver digital solutions that are not only
+              visually appealing but also optimized for performance and user
+              experience. Whether it's a simple landing page or a complex web
+              application, every project is built with precision, creativity, and
+              a focus on results.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {info.map((i) => (
+                <div
+                  key={i.label}
+                  className="rounded-lg bg-card border border-border px-4 py-3 text-sm"
+                >
+                  <span className="font-semibold text-foreground">{i.label}: </span>
+                  <span className="text-muted-foreground">{i.value}</span>
+                </div>
+              ))}
+            </div>
+
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-button px-7 py-3 text-sm font-semibold text-primary-foreground shadow-pink hover:scale-105 transition-transform"
             >
-              <Icon className="h-6 w-6 text-primary mb-4" />
-              <div className="text-3xl font-bold mb-1">{value}</div>
-              <div className="text-sm text-muted-foreground">{label}</div>
-            </motion.div>
-          ))}
+              Download CV
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>
