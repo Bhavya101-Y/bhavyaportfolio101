@@ -5,7 +5,7 @@ import { SectionHeading } from "./About";
 const education = [
   {
     title: "B.Tech in Computer Science & Engineering",
-    place: "University",
+    place: "Uttarakhand Technical University",
     period: "2022 - 2026",
     desc: "Studying core CSE subjects including DSA, Web Development, DBMS and Software Engineering.",
   },
