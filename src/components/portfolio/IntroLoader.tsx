@@ -38,7 +38,7 @@ export const IntroLoader = ({ onDone }: { onDone: () => void }) => {
           />
 
           <div className="relative z-10 flex flex-col items-center">
-            {/* AK monogram */}
+            {/* B monogram */}
             <motion.div
               initial={{ scale: 0, rotate: -180, opacity: 0 }}
               animate={{ scale: 1, rotate: 0, opacity: 1 }}
@@ -46,7 +46,7 @@ export const IntroLoader = ({ onDone }: { onDone: () => void }) => {
               className="relative h-32 w-32 rounded-3xl bg-gradient-button flex items-center justify-center mb-8"
               style={{ boxShadow: "0 0 60px hsl(var(--brand-pink) / 0.6), 0 0 120px hsl(var(--brand-cyan) / 0.4)" }}
             >
-              <span className="text-5xl font-extrabold text-white tracking-tight">AK</span>
+              <span className="text-5xl font-extrabold text-white tracking-tight">B</span>
               <motion.span
                 className="absolute inset-0 rounded-3xl border-2 border-brand-cyan"
                 animate={{ scale: [1, 1.4, 1], opacity: [0.8, 0, 0.8] }}
@@ -61,7 +61,7 @@ export const IntroLoader = ({ onDone }: { onDone: () => void }) => {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="text-3xl sm:text-4xl font-extrabold text-gradient-heading mb-6"
             >
-              Akshat Kala
+              Bhavya
             </motion.h1>
 
             {/* loading bar */}

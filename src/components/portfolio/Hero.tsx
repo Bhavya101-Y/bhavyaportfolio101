@@ -31,7 +31,7 @@ export const Hero = () => {
           transition={{ duration: 0.7 }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6"
         >
-          Hey, I'm <span className="text-gradient-heading">Akshat Kala</span>
+          Hey, I'm <span className="text-gradient-heading">Bhavya</span>
         </motion.h1>
 
         <motion.p

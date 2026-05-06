@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
 
 const info = [
-  { label: "Name", value: "Akshat Kala" },
-  { label: "DOB", value: "November 05, 2005" },
-  { label: "Address", value: "Himalayan Colony, Najibabad" },
-  { label: "Zip Code", value: "246763" },
-  { label: "Email", value: "itzakshat706@gmail.com" },
-  { label: "Phone", value: "+91 8923 700017" },
+  { label: "Name", value: "Bhavya" },
+  { label: "DOB", value: "April 10, 2005" },
+  { label: "Address", value: "Shri Ram Vihar Colony, Haridwar" },
+  { label: "Phone", value: "+91 8958 120072" },
   { label: "Projects", value: "5+ Projects Worked On" },
 ];
 
@@ -46,7 +44,7 @@ export const About = () => {
             className="relative aspect-[3/4] max-w-sm rounded-2xl border-gradient-brand shadow-pink overflow-hidden bg-card"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-brand-pink/30 via-brand-purple/20 to-brand-cyan/30 flex items-center justify-center">
-              <span className="text-7xl font-extrabold text-gradient-brand">AK</span>
+              <span className="text-7xl font-extrabold text-gradient-brand">B</span>
             </div>
           </motion.div>
 
