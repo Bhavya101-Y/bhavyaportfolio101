@@ -5,7 +5,7 @@ import { SectionHeading } from "./About";
 const education = [
   {
     title: "B.Tech in Computer Science & Engineering",
-    place: "University",
+    place: "Uttarakhand Technical University",
     period: "2022 - 2026",
     desc: "Studying core CSE subjects including DSA, Web Development, DBMS and Software Engineering.",
   },
@@ -95,7 +95,37 @@ export const Resume = () => {
             </motion.div>
           </AnimatePresence>
         </div>
+
+        {/* Certifications & Badges */}
+        <div className="mt-24">
+          <SectionHeading>Certifications &amp; Badges</SectionHeading>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {certifications.map((c, i) => (
+              <motion.div
+                key={c.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="rounded-xl bg-card border border-brand-cyan/40 p-5 hover:border-brand-pink/60 hover:shadow-pink transition-all"
+              >
+                <h4 className="text-brand-cyan font-bold leading-snug mb-2">
+                  {c.title}
+                </h4>
+                <p className="text-muted-foreground text-sm">{c.issuer}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
 };
+
+const certifications = [
+  { title: "Deloitte Australia - Cyber Job Simulation -", issuer: "Forage" },
+  { title: "Introduction to Programming Using Python -", issuer: "HackerRank" },
+  { title: "Software Engineer Intern -", issuer: "HackerRank" },
+  { title: "Certificate of Participation in Sansad - YIP -", issuer: "Unstop" },
+];
+
