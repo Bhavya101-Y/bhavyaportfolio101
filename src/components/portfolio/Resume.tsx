@@ -4,37 +4,37 @@ import { SectionHeading } from "./About";
 
 const education = [
   {
-    title: "B.Tech in Artificial Intelligence & Machine Learning",
-    place: "Uttarakhand Technical University",
-    period: "2024 - 2028",
-    desc: "Studying core subjects like DSA, Web Dev, AI, and DBMS.",
+    title: "B.Tech in Computer Science & Engineering",
+    place: "University",
+    period: "2022 - 2026",
+    desc: "Studying core CSE subjects including DSA, Web Development, DBMS and Software Engineering.",
   },
   {
     title: "Intermediate",
-    place: "Krist Jayanti School",
-    period: "2022 - 2024",
-    desc: "Studied core subjects like Physics, Mathematics, Chemistry, Informatics Practices.",
+    place: "Shivedale School",
+    period: "2021 - 2022",
+    desc: "Completed intermediate with focus on Science and Mathematics.",
   },
   {
     title: "High School",
-    place: "Krist Jayanti School",
-    period: "2020 - 2022",
-    desc: "Completed high school with focus on Science and Computer fundamentals.",
+    place: "Shivedale School",
+    period: "2019 - 2020",
+    desc: "Completed high school with strong foundation in Science and Computer fundamentals.",
   },
 ];
 
 const experience = [
   {
-    title: "Freelance Web Developer",
-    place: "Self-employed",
-    period: "2024 - Present",
-    desc: "Building portfolios, landing pages and full-stack apps for clients across India.",
+    title: "Python Programming Intern",
+    place: "CodSoft",
+    period: "Jul 2024 – Jul 2024",
+    desc: "Worked on Python-based projects during a 4-week virtual internship. Built mini applications including calculator, to-do list, contact book, and rock-paper-scissors game using Python.",
   },
   {
-    title: "Open Source Contributor",
-    place: "GitHub Community",
-    period: "2023 - Present",
-    desc: "Contributing to open-source web and AI projects, improving docs and small features.",
+    title: "Web Development Intern",
+    place: "Prasunet Pvt. Ltd.",
+    period: "Aug 2024 – Aug 2024",
+    desc: "Worked on frontend web development and responsive UI design projects. Improved practical skills in HTML, CSS, JavaScript, and modern web development practices.",
   },
 ];
 
