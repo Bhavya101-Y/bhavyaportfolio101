@@ -64,18 +64,19 @@ export const Hero = () => {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="flex flex-wrap justify-center gap-4 sm:gap-6"
         >
-          {techIcons.map((t) => (
-            <div
-              key={t.name}
-              title={t.name}
-              className="h-12 w-12 sm:h-14 sm:w-14 rounded-xl bg-card border border-border flex items-center justify-center hover:scale-110 transition-transform animate-float"
-              style={{ animationDelay: `${Math.random() * 2}s`, boxShadow: `0 0 20px ${t.color}30` }}
-            >
-              <span className="text-sm font-bold" style={{ color: t.color }}>
-                {t.name.slice(0, 2).toUpperCase()}
-              </span>
-            </div>
-          ))}
+          {techIcons.map((t) => {
+            const { Icon } = t;
+            return (
+              <div
+                key={t.name}
+                title={t.name}
+                className="h-12 w-12 sm:h-14 sm:w-14 rounded-xl bg-card border border-border flex items-center justify-center hover:scale-110 transition-transform animate-float"
+                style={{ animationDelay: `${Math.random() * 2}s`, boxShadow: `0 0 20px ${t.color}30` }}
+              >
+                <Icon size={26} color={t.color} style={{ filter: `drop-shadow(0 0 8px ${t.color}90)` }} />
+              </div>
+            );
+          })}
         </motion.div>
       </div>
     </section>
