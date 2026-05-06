@@ -28,7 +28,7 @@ export const Navbar = () => {
     >
       <div className="container flex h-16 items-center justify-between">
         <a href="#home" className="text-2xl font-extrabold tracking-tight">
-          <span className="text-brand-pink">Akshat</span>
+          <span className="text-brand-pink">Bhavya</span>
           <span className="text-brand-cyan">Kala</span>
         </a>
 

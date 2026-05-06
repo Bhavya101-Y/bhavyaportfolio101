@@ -61,7 +61,7 @@ export const IntroLoader = ({ onDone }: { onDone: () => void }) => {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="text-3xl sm:text-4xl font-extrabold text-gradient-heading mb-6"
             >
-              Akshat Kala
+              Bhavya
             </motion.h1>
 
             {/* loading bar */}

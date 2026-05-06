@@ -80,7 +80,7 @@ export const Contact = () => {
       <footer className="container mt-24 pt-8 border-t border-border text-center">
         <p className="text-muted-foreground mb-5">
           Designed & Built with <Heart className="inline h-4 w-4 text-red-500 fill-red-500" /> by{" "}
-          <span className="text-brand-cyan font-semibold">Akshat Kala</span>
+          <span className="text-brand-cyan font-semibold">Bhavya</span>
         </p>
         <div className="flex items-center justify-center gap-5">
           {[Github, Linkedin, Mail, Twitter].map((Icon, i) => (
