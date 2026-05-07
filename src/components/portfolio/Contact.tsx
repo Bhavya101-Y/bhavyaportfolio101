@@ -83,10 +83,17 @@ export const Contact = () => {
           <span className="text-brand-cyan font-semibold">Bhavya</span>
         </p>
         <div className="flex items-center justify-center gap-5">
-          {[Github, Linkedin, Mail, Twitter].map((Icon, i) => (
+          {[
+            { Icon: Github, href: "https://github.com/Bhavya101-Y" },
+            { Icon: Linkedin, href: "https://www.linkedin.com/in/bhavya-yadav-" },
+            { Icon: Mail, href: "mailto:bhavya@example.com" },
+            { Icon: Twitter, href: "#" },
+          ].map(({ Icon, href }, i) => (
             <a
               key={i}
-              href="#"
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-muted-foreground hover:text-brand-cyan transition-colors"
             >
               <Icon className="h-5 w-5" />
