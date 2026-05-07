@@ -10,7 +10,12 @@ export const Contact = () => {
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: "Message sent!", description: "Thanks for reaching out — I'll get back to you soon." });
+    const subject = encodeURIComponent(`Portfolio contact from ${form.name}`);
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
+    );
+    window.location.href = `mailto:bhavya101yadav@gmail.com?subject=${subject}&body=${body}`;
+    toast({ title: "Opening your mail app…", description: "Your message will be delivered to bhavya101yadav@gmail.com." });
     setForm({ name: "", email: "", message: "" });
   };
 
@@ -86,8 +91,8 @@ export const Contact = () => {
           {[
             { Icon: Github, href: "https://github.com/Bhavya101-Y" },
             { Icon: Linkedin, href: "https://www.linkedin.com/in/bhavya-yadav-" },
-            { Icon: Mail, href: "mailto:bhavya@example.com" },
-            { Icon: Twitter, href: "#" },
+            { Icon: Mail, href: "mailto:bhavya101yadav@gmail.com" },
+            { Icon: Twitter, href: "https://x.com/Bhavya101Yadav" },
           ].map(({ Icon, href }, i) => (
             <a
               key={i}
