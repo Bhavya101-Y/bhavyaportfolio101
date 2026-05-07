@@ -78,7 +78,8 @@ export const About = () => {
             </div>
 
             <a
-              href="#"
+              href="/Bhavya_Resume.docx"
+              download
               className="inline-flex items-center gap-2 rounded-full bg-gradient-button px-7 py-3 text-sm font-semibold text-primary-foreground shadow-pink hover:scale-105 transition-transform"
             >
               Download CV
