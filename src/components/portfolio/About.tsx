@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import bhavyaPhoto from "@/assets/bhavya.jpeg";
 
 const info = [
   { label: "Name", value: "Bhavya" },
@@ -43,9 +44,11 @@ export const About = () => {
             transition={{ duration: 0.6 }}
             className="relative aspect-[3/4] max-w-sm rounded-2xl border-gradient-brand shadow-pink overflow-hidden bg-card"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-pink/30 via-brand-purple/20 to-brand-cyan/30 flex items-center justify-center">
-              <span className="text-7xl font-extrabold text-gradient-brand">B</span>
-            </div>
+            <img
+              src={bhavyaPhoto}
+              alt="Bhavya Yadav"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
           </motion.div>
 
           <motion.div
@@ -78,7 +81,7 @@ export const About = () => {
             </div>
 
             <a
-              href="/Bhavya_Resume.docx"
+              href="/Bhavya_Resume.pdf"
               download
               className="inline-flex items-center gap-2 rounded-full bg-gradient-button px-7 py-3 text-sm font-semibold text-primary-foreground shadow-pink hover:scale-105 transition-transform"
             >
