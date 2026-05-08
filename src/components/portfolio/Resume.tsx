@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionHeading } from "./About";
+import prasunetCert from "@/assets/certs/prasunet.jpg";
+import msAiCert from "@/assets/certs/microsoft-ai.jpg";
+import msAzureCert from "@/assets/certs/microsoft-azure.jpg";
+import msMlCert from "@/assets/certs/microsoft-ml.jpg";
+import deloitteCert from "@/assets/certs/deloitte-cyber.png";
+import awsCert from "@/assets/certs/aws-forage.png";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const education = [
   {
@@ -99,7 +106,7 @@ export const Resume = () => {
         {/* Certifications & Badges */}
         <div className="mt-24">
           <SectionHeading>Certifications &amp; Badges</SectionHeading>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {certifications.map((c, i) => (
               <motion.div
                 key={c.title}
@@ -107,12 +114,31 @@ export const Resume = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="rounded-xl bg-card border border-brand-cyan/40 p-5 hover:border-brand-pink/60 hover:shadow-pink transition-all"
+                className="rounded-xl bg-card border border-brand-cyan/40 overflow-hidden hover:border-brand-pink/60 hover:shadow-pink transition-all group"
               >
-                <h4 className="text-brand-cyan font-bold leading-snug mb-2">
-                  {c.title}
-                </h4>
-                <p className="text-muted-foreground text-sm">{c.issuer}</p>
+                {c.image ? (
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <button className="block w-full overflow-hidden">
+                        <img
+                          src={c.image}
+                          alt={c.title}
+                          loading="lazy"
+                          className="w-full h-44 object-cover object-top group-hover:scale-105 transition-transform"
+                        />
+                      </button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-4xl p-2 bg-card">
+                      <img src={c.image} alt={c.title} className="w-full h-auto rounded-md" />
+                    </DialogContent>
+                  </Dialog>
+                ) : null}
+                <div className="p-5">
+                  <h4 className="text-brand-cyan font-bold leading-snug mb-2">
+                    {c.title}
+                  </h4>
+                  <p className="text-muted-foreground text-sm">{c.issuer}</p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -122,10 +148,15 @@ export const Resume = () => {
   );
 };
 
-const certifications = [
-  { title: "Deloitte Australia - Cyber Job Simulation -", issuer: "Forage" },
-  { title: "Introduction to Programming Using Python -", issuer: "HackerRank" },
-  { title: "Software Engineer Intern -", issuer: "HackerRank" },
-  { title: "Certificate of Participation in Sansad - YIP -", issuer: "Unstop" },
+const certifications: { title: string; issuer: string; image?: string }[] = [
+  { title: "Cyber Job Simulation", issuer: "Deloitte Australia · Forage", image: deloitteCert },
+  { title: "Solutions Architecture Job Simulation", issuer: "AWS · Forage", image: awsCert },
+  { title: "Web Development Internship", issuer: "Prasunet Pvt. Ltd.", image: prasunetCert },
+  { title: "Fundamental AI Concepts", issuer: "Microsoft", image: msAiCert },
+  { title: "Fundamentals of Azure AI Services", issuer: "Microsoft", image: msAzureCert },
+  { title: "Fundamentals of Machine Learning", issuer: "Microsoft", image: msMlCert },
+  { title: "Introduction to Programming Using Python", issuer: "HackerRank" },
+  { title: "Software Engineer Intern", issuer: "HackerRank" },
+  { title: "Participation in Sansad - YIP", issuer: "Unstop" },
 ];
 
