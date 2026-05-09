@@ -82,12 +82,26 @@ export const Projects = () => {
                   ))}
                 </div>
                 <div className="flex items-center gap-3">
-                  <a href="#" className="text-brand-cyan hover:text-brand-pink transition-colors">
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${p.title} on GitHub`}
+                    className="text-brand-cyan hover:text-brand-pink transition-colors"
+                  >
                     <Github className="h-5 w-5" />
                   </a>
-                  <a href="#" className="text-brand-cyan hover:text-brand-pink transition-colors">
-                    <ExternalLink className="h-5 w-5" />
-                  </a>
+                  {p.demo && (
+                    <a
+                      href={p.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${p.title} live demo`}
+                      className="text-brand-cyan hover:text-brand-pink transition-colors"
+                    >
+                      <ExternalLink className="h-5 w-5" />
+                    </a>
+                  )}
                 </div>
               </motion.article>
             ))}
