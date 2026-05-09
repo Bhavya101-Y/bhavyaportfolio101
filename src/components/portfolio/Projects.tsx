@@ -27,6 +27,27 @@ const projects: { title: string; desc: string; tags: string[]; categories: Categ
     categories: ["AI"],
     github: "https://github.com/Bhavya101-Y/Chat_Bot",
   },
+  {
+    title: "Project Management",
+    desc: "A collaborative project management tool to organize tasks, track progress, and manage team workflows.",
+    tags: ["React", "Node.js", "MongoDB", "Express"],
+    categories: ["Fullstack", "Web App"],
+    github: "https://github.com/bohrakaran/Project-Management",
+  },
+  {
+    title: "Classic Calculator",
+    desc: "A clean, responsive classic calculator built with vanilla web technologies.",
+    tags: ["JavaScript", "HTML", "CSS"],
+    categories: ["Frontend", "Web App"],
+    github: "https://github.com/Bhavya101-Y/Classic_Calculator",
+  },
+  {
+    title: "Zerodha Clone",
+    desc: "A full-stack clone of the Zerodha trading platform with landing pages and dashboard UI.",
+    tags: ["MERN", "React", "Node.js", "MongoDB"],
+    categories: ["Fullstack", "Web App"],
+    github: "https://github.com/Bhavya101-Y/Zerodha-clone",
+  },
 ];
 
 const filters: Category[] = ["All", "Frontend", "Fullstack", "AI", "Web App"];
