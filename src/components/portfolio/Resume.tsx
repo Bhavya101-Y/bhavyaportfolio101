@@ -155,8 +155,5 @@ const certifications: { title: string; issuer: string; image?: string }[] = [
   { title: "Fundamental AI Concepts", issuer: "Microsoft", image: msAiCert },
   { title: "Fundamentals of Azure AI Services", issuer: "Microsoft", image: msAzureCert },
   { title: "Fundamentals of Machine Learning", issuer: "Microsoft", image: msMlCert },
-  { title: "Introduction to Programming Using Python", issuer: "HackerRank" },
-  { title: "Software Engineer Intern", issuer: "HackerRank" },
-  { title: "Participation in Sansad - YIP", issuer: "Unstop" },
 ];
 
