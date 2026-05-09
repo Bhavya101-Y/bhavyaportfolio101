@@ -5,42 +5,27 @@ import { SectionHeading } from "./About";
 
 type Category = "All" | "Frontend" | "Fullstack" | "AI" | "Web App";
 
-const projects: { title: string; desc: string; tags: string[]; categories: Category[] }[] = [
+const projects: { title: string; desc: string; tags: string[]; categories: Category[]; github: string; demo?: string }[] = [
   {
-    title: "NeuroDub AI",
-    desc: "Auto-translate and dub videos using ElevenLabs, Express, and Cloudinary.",
-    tags: ["React", "Express", "Node", "Mutler", "Cloudinary", "ElevenLabs API", "Axios"],
-    categories: ["AI", "Fullstack"],
+    title: "AI Job Portal (Microservices)",
+    desc: "A scalable AI-powered job portal built on a microservices architecture for smart job matching and recommendations.",
+    tags: ["Microservices", "Node.js", "AI", "MongoDB", "Docker"],
+    categories: ["AI", "Fullstack", "Web App"],
+    github: "https://github.com/Bhavya101-Y/ai-job-portal-microservices",
   },
   {
-    title: "WeatherSit3",
-    desc: "Live weather dashboard with forecasts, charts, and dynamic UI.",
-    tags: ["MERN", "WeatherAPI", "Axios", "Tailwind CSS"],
-    categories: ["Fullstack", "Web App"],
+    title: "Sorting Visualization",
+    desc: "Interactive visualizer for classic sorting algorithms with animated step-by-step comparisons.",
+    tags: ["JavaScript", "HTML", "CSS", "Algorithms"],
+    categories: ["Frontend", "Web App"],
+    github: "https://github.com/Bhavya101-Y/Sorting_Visualization",
   },
   {
-    title: "The Talk App",
-    desc: "A real-time chat app with typing indicators, sockets, and elegant UI.",
-    tags: ["React", "Node.js", "Socket.IO", "MongoDB", "Tailwind CSS", "Express.js"],
-    categories: ["Fullstack", "Web App"],
-  },
-  {
-    title: "3D Portfolio",
-    desc: "An immersive 3D portfolio site built with Three.js and React Three Fiber.",
-    tags: ["React", "Three.js", "GSAP", "Tailwind CSS"],
-    categories: ["Frontend"],
-  },
-  {
-    title: "Glow UI Kit",
-    desc: "A collection of glassmorphism components with neon accents.",
-    tags: ["React", "Tailwind", "Framer Motion"],
-    categories: ["Frontend"],
-  },
-  {
-    title: "TaskFlow",
-    desc: "Kanban-style productivity app with drag & drop and reminders.",
-    tags: ["React", "Node", "MongoDB"],
-    categories: ["Fullstack", "Web App"],
+    title: "Chat Bot",
+    desc: "A conversational chatbot built with Python that handles user queries with natural responses.",
+    tags: ["Python", "NLP", "AI"],
+    categories: ["AI"],
+    github: "https://github.com/Bhavya101-Y/Chat_Bot",
   },
 ];
 
