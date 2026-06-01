@@ -86,13 +86,7 @@ npm run dev
 
 ---
 
-## 📧 Contact
 
-Email: [your-email@example.com](mailto:your-email@example.com)
-
-LinkedIn: https://linkedin.com/in/your-profile
-
-GitHub: https://github.com/yourusername
 
 ---
 
@@ -102,4 +96,4 @@ If you like this project, consider giving it a star on GitHub.
 
 ---
 
-Made with ❤️ by Bhavya
+Made by Bhavya
