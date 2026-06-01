@@ -10,6 +10,7 @@ import {
   FaGithub,
   FaNpm,
   FaFigma,
+  FaAws,
 } from "react-icons/fa";
 import {
   SiExpress,
@@ -24,7 +25,6 @@ import {
   SiNextdotjs,
   SiPostman,
   SiDocker,
-  SiAmazonaws,
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
 import type { IconType } from "react-icons";
