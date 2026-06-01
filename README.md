@@ -5,7 +5,7 @@ A modern and responsive Full Stack Developer portfolio built using React, TypeSc
 
 ## 🌐 Live Demo
 
-🔗 Portfolio: https://bhavyaportfolio101-git-main-bhavyas-projects-919d24bf.vercel.app/
+🔗 Portfolio: (https://bhavyaportfolio101.vercel.app/)
 
 ---
 
