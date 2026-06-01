@@ -53,7 +53,7 @@ const skills: Skill[] = [
   { name: "TypeScript", level: 78, color: "#3178C6", Icon: SiTypescript },
   { name: "Next.js", level: 70, color: "#ffffff", Icon: SiNextdotjs },
   { name: "Figma", level: 72, color: "#F24E1E", Icon: FaFigma },
-  { name: "AWS", level: 70, color: "#FF9900", Icon: SiAmazonaws },
+  { name: "AWS", level: 70, color: "#FF9900", Icon: FaAws },
   { name: "Docker", level: 72, color: "#2496ED", Icon: SiDocker },
 ];
 
