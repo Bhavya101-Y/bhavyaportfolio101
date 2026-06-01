@@ -12,6 +12,7 @@ const projects: { title: string; desc: string; tags: string[]; categories: Categ
     tags: ["Microservices", "Node.js", "AI", "MongoDB", "Docker"],
     categories: ["AI", "Fullstack", "Web App"],
     github: "https://github.com/Bhavya101-Y/ai-job-portal-microservices",
+    demo: "https://ai-job-portal-microservices-3e2u.vercel.app/",
   },
   {
     title: "Sorting Visualization",
@@ -19,6 +20,7 @@ const projects: { title: string; desc: string; tags: string[]; categories: Categ
     tags: ["JavaScript", "HTML", "CSS", "Algorithms"],
     categories: ["Frontend", "Web App"],
     github: "https://github.com/Bhavya101-Y/Sorting_Visualization",
+    demo: "https://bhavya101-y.github.io/Sorting_Visualization/",
   },
   {
     title: "Chat Bot",
@@ -26,6 +28,7 @@ const projects: { title: string; desc: string; tags: string[]; categories: Categ
     tags: ["Python", "NLP", "AI"],
     categories: ["AI"],
     github: "https://github.com/Bhavya101-Y/Chat_Bot",
+    demo: "https://bhavya101-y.github.io/Chat_Bot/",
   },
   {
     title: "Project Management",
@@ -33,6 +36,7 @@ const projects: { title: string; desc: string; tags: string[]; categories: Categ
     tags: ["React", "Node.js", "MongoDB", "Express"],
     categories: ["Fullstack", "Web App"],
     github: "https://github.com/bohrakaran/Project-Management",
+    demo: "https://timely-chi-sand.vercel.app/",
   },
   {
     title: "Classic Calculator",
@@ -40,6 +44,7 @@ const projects: { title: string; desc: string; tags: string[]; categories: Categ
     tags: ["JavaScript", "HTML", "CSS"],
     categories: ["Frontend", "Web App"],
     github: "https://github.com/Bhavya101-Y/Classic_Calculator",
+    demo: "https://bhavya101-y.github.io/Classic_Calculator/",
   },
   {
     title: "Zerodha Clone",
