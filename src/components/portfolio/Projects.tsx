@@ -7,6 +7,14 @@ type Category = "All" | "Frontend" | "Fullstack" | "AI" | "Web App";
 
 const projects: { title: string; desc: string; tags: string[]; categories: Category[]; github: string; demo?: string }[] = [
   {
+    title: "Evora",
+    desc: "A modern, responsive web application built with a clean UI and smooth user experience.",
+    tags: ["React", "TypeScript", "Tailwind CSS"],
+    categories: ["Frontend", "Web App"],
+    github: "https://github.com/Bhavya101-Y/Evora",
+    demo: "https://evoraa.netlify.app/",
+  },
+  {
     title: "AI Job Portal (Microservices)",
     desc: "A scalable AI-powered job portal built on a microservices architecture for smart job matching and recommendations.",
     tags: ["Microservices", "Node.js", "AI", "MongoDB", "Docker"],
